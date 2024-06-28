@@ -21,4 +21,4 @@ shg.query(entities[0].x, entities[0].y, shg.cell_size, shg.cell_size);
 shg.update();
 ```
 ## Notes
-This [video](https://www.youtube.com/watch?v=sx4IIQL0x7c&t=358s) at does a good job explaining what spatial hash grids are.
+This [video](https://www.youtube.com/watch?v=sx4IIQL0x7c&t=358s) at does a good job explaining what spatial hash grids are (although the way this is implemented is slightly different).
