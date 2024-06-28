@@ -62,7 +62,7 @@ namespace SHG {
       inline void add(Entity<T> *entity) {
         auto &first_entity = this->grid[this->pos_to_cell_index(entity->x, entity->y)];
 
-        if (first_entity != nullptr) {
+        if (first_entity) {
           entity->next = first_entity;
           first_entity->prev = entity;
         }
@@ -76,8 +76,8 @@ namespace SHG {
 
         if (entity == first_entity) first_entity = first_entity->next;
 
-        if (entity->prev != nullptr) entity->prev->next = entity->next;
-        if (entity->next != nullptr) entity->next->prev = entity->prev;
+        if (!entity->prev) entity->prev->next = entity->next;
+        if (!entity->next) entity->next->prev = entity->prev;
 
         entity->prev = entity->next = nullptr;
       }
@@ -86,7 +86,7 @@ namespace SHG {
         for (std::uint32_t i = 0; i < this->cell_count; i++) {
           Entity<T> *current = this->grid[i];
 
-          while (current != nullptr) {
+          while (current) {
             Entity<T> *next = current->next;
 
             if (i != this->pos_to_cell_index(current->x, current->y)) {
@@ -116,7 +116,7 @@ namespace SHG {
           for (std::uint32_t grid_x = start_grid_x; grid_x <= end_grid_x; grid_x++) {
             Entity<T> *current = this->grid[grid_y * this->grid_width_log2 + grid_x];
 
-            while (current != nullptr) {
+            while (current) {
               results.push_back(current);
 
               current = current->next;
