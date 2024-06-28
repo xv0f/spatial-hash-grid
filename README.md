@@ -5,9 +5,9 @@ For 2D spaces and objects.
 ```cpp
 #include <spatial_hash_grid.hh>
 
-SHG::SpatialHashGrid shg(64, 1024, 512);
+SHG::SpatialHashGrid shg(64, 1024, 1024);
 
-std::vector<SHG::Entity<>> entities(10000, SHG::Entity<>());
+std::vector<SHG::Entity<>> entities(1000, SHG::Entity<>());
 
 // Add entities
 for (auto &entity : entities) {
