@@ -15,9 +15,7 @@ for (auto &entity : entities) {
 }
 
 // Query for nearby entities
-for (std::uint32_t i = 0; i < entities.size(); i++) {
-  shg.query(entities[i].x, entities[i].y, shg.cell_size, shg.cell_size);
-}
+shg.query(entities[0].x, entities[0].y, shg.cell_size, shg.cell_size);
 
 // Update entity positions
 shg.update();
