@@ -76,8 +76,8 @@ namespace SHG {
 
         if (entity == first_entity) first_entity = first_entity->next;
 
-        if (!entity->prev) entity->prev->next = entity->next;
-        if (!entity->next) entity->next->prev = entity->prev;
+        if (entity->prev) entity->prev->next = entity->next;
+        if (entity->next) entity->next->prev = entity->prev;
 
         entity->prev = entity->next = nullptr;
       }
