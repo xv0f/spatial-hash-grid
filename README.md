@@ -24,3 +24,5 @@ shg.update();
 This [video](https://www.youtube.com/watch?v=sx4IIQL0x7c&t=358s) at does a good job explaining what spatial hash grids are (although the way this is implemented is slightly different).
 
 Your choice of `cell_size`, `grid_width`, and `grid_height` affects the speed of the spatial hash grid, so choose wisely. Scaling the numbers shown in the example seems to work well.
+
+Multithreading the `query` function can significantly improve query speed.
